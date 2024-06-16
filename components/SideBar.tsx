@@ -1,6 +1,8 @@
+"use client";
 import { Genre } from "@/lib/movies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SideBarProps = {
   className?: string;
@@ -8,11 +10,16 @@ type SideBarProps = {
 };
 
 export default function SideBar({ className, genres }: SideBarProps) {
+  const currentPath = usePathname();
   const Option = ({ id, name }: { id: string; name: string }) => {
+    const path = `/genres/${id}`;
     return (
       <Link
-        href={`/genres/${id}`}
-        className=" overflow-hidden truncate text-zinc-500 bg-stone-50 py-1 px-2 w-auto hover:text-zinc-900 hover:bg-blue-100"
+        href={path}
+        className={cn(
+          " overflow-hidden truncate text-zinc-500 bg-stone-50 py-1 px-2 w-auto hover:text-zinc-900 hover:bg-blue-100",
+          path === currentPath ? "bg-blue-100" : ""
+        )}
       >
         {name}
       </Link>
