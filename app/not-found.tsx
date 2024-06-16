@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main 
       className={cn(
-        "bg-black text-zinc-300 flex min-h-screen flex-col",
+        "bg-black text-zinc-300 flex flex-col h-[calc(100vh-6rem)]",
         "items-center justify-center text-center "
       )}
     >
