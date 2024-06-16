@@ -74,3 +74,16 @@
       @apply bg-background text-foreground;
     }
   }
+
+  h1{
+    @apply text-3xl font-bold my-10
+  }
+
+  .main-link{
+    @apply font-medium text-sm text-blue-600 border py-1 px-5 rounded-full
+
+  }
+
+  .debug {
+    @apply border border-red-500 
+  }
